@@ -1,0 +1,57 @@
+body{ padding: 20px 0; font-family: "droid sans", 'Helvetica Neue', Helvetica, arial, sans-serif;}
+ol{ margin: 0 auto; width: 60%;}
+li{
+	margin: 20px;
+}
+li span{font-size: 120%;}
+#Report{font-size: 60%; color: gray}
+#TranslucentLayer {
+  z-index: 5;
+  height: 100%;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: #000;
+  filter: alpha(opacity=60);
+  opacity: 0.85;
+}
+#ModalFrame, #fbModalFrame {
+  position: fixed;
+  _position: absolute;
+  max-width: 1000px;
+  width: 700px;
+  z-index: 6;
+  _padding-bottom: 0;
+}
+#ModalFrame iframe, #fbModalFrame iframe {
+  background-color: #fff;
+  box-shadow: 0 0 2em rgba(0, 0, 0, 0.5);
+  border-radius: 10px;
+  background-color: #fff;
+}
+#ModalFrame #close {
+  padding: 0;
+  width: 44px;
+  height: 46px;
+  content: " ";
+  background-image: url("../images/ui/iconSprite13.png");
+  background-repeat: no-repeat;
+  background-position: -195px -64px;
+  position: absolute;
+  top: -22px;
+  right: -22px;
+  cursor: pointer;
+}
+#ModalFrame #close:active {
+  -moz-transform: scale(0.8);
+  -webkit-transform: scale(0.8);
+  -o-transform: scale(0.8);
+  -ms-transform: scale(0.8);
+  -khtml-transform: scale(0.8);
+  transform: scale(0.8);
+  -webkit-transition: all 0.25s ease;
+  -moz-transition: all 0.25s ease;
+  -o-transition: all 0.25s ease;
+  transition: all 0.25s ease;
+}

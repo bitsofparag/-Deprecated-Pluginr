@@ -1,0 +1,9 @@
+<script type="text/template" id="cltp_modal_tmpl">
+	<div id="cltp_modal_overlay">
+		<div id="cltp_modal"></div>
+	</div>
+</script>
+
+<script type="text/template" id="cltp_modal_close_tmpl">
+	<a href="#" id="cltp_modal_close">&times;</a>
+</script>

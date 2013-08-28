@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset='utf-8' />
+		<title>Pluginr | Build your plugin template | by Parag</title>
+		<link href="stylesheets/normalize.css" media="screen" rel="stylesheet" type="text/css" />
+		<link href="stylesheets/plugin_maker.css" media="screen" rel="stylesheet" type="text/css" />
+    </head>
+	<body class="pluginMaker">
+		<header>
+			Build your plugin template
+		</header>
+		
+		<section id="page1" style="display:none">
+			<h3>Enter plugin name</h3>
+			<div class="wrapbox">
+				<input type="text" value="" placeholder="e.g my plugin, Modal..." id="make_plugin" />
+				<button id="make_plugin_submit">Go</button>
+				<div class="optionsWrapbox">
+					<label><input type="checkbox" id="include_css" />Include css</label>
+					<label><input type="checkbox" id="include_tmpl" />Include template</label>
+				</div>
+			</div>
+		</section>
+		
+		<section id="page2" style="display:none">
+			<div class="wrapbox">
+				<label>Bam! Here's your template code:</label>
+				<a href="#" id="clip_button">Awesome! Copy it</a>
+				<textarea class="code" id="make_plugin_output"></textarea>
+				<button class="next">Next ></button>
+			</div>
+		</section>
+		
+		<section id="page3" style="display:none">
+			<div class="wrapbox">
+			<h3>What next?</h3>
+			<ul>
+				<li>Paste the copied code in your <em>javascripts </em> folder as <strong>{{plugin}}.js</strong></li>
+				<li>Create a template html file called <strong>{{plugin}}.tmpl.html</strong> and place it in your <em>templates</em> folder (optional)</li>
+				<li>Add CSS file for the plugin in <em>stylesheets</em> folder and name it <strong>{{plugin}}.css</strong> (optional)</li>
+				<li>Basic html to run this plugin. Try it out:
+					<textarea class="code">%3C%21DOCTYPE%20html%3E%0D%0A%3Chtml%3E%0D%0A%3Chead%3E%3C/head%3E%0D%0A%3Cbody%3E%0D%0A%3Ca%20href%3D%22%23%22%20data-plugin%3D%22%7B%7BPlugin%7D%7D%22%20data-events%3D%22click%22%20data-props%3D%22show%20%3A%20function%28%29%7B%20alert%28%27It%20works%21%27%29%3B%20%7D%22%3EClick for alert%3C/a%3E%0D%0A%3Cscript%20src%3D%22javascripts/jquery.min.js%22%3E%3C/script%3E%0D%0A%3Cscript%20src%3D%22javascripts/pluginr.js%22%3E%3C/script%3E%0D%0A%3Cscript%20src%3D%22javascripts/%7B%7Bplugin%7D%7D.js%22%3E%3C/script%3E%0D%0A%3C/body%3E%0D%0A%3C/html%3E</textarea>
+				</li>
+			</ul>
+			<h2 class="last">Now open '{{plugin}}.js' and start writing your plugin!</h2>
+			</div>
+		</section>
+		
+		<div id="plugin_template" style="display:none">	</div>
+		<div id="loader">Loading...</div>
+		
+		<script data-main="javascripts/demo.js" src="javascripts/require.js"></script>
+	</body>
+</html>

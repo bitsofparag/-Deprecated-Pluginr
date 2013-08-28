@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+<head></head>
+<body>
+<a href="#" data-plugin="MyAlert" data-events="click" data-props="show : function(){ alert($('#MyAlert_PrTemplate').html().replace('{{name}}', 'World!')); }">Click for alert</a>
+
+<script type="text/template" id="MyAlert_PrTemplate">
+	Hello {{name}}
+</script>
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<script src="javascripts/pluginr.js"></script>
+<script src="javascripts/myalert.js"></script>
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset='utf-8' />
+		<meta content='telephone=no' name='format-detection' />
+		<title>Pluginr | Modal</title>
+		<link href='/apple-touch-icon-precomposed.png' rel='apple-touch-icon-precomposed' />
+		<meta content='True' name='HandheldFriendly' />
+		<meta content='320' name='MobileOptimized' />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"/>
+		<meta content='yes' name='apple-mobile-web-app-capable' />
+		<meta content='black' name='apple-mobile-web-app-status-bar-style' />
+    </head>
+	<body>
+		<header>
+			<nav>
+				<ol>
+					<li>
+						<span>Simple case: </span>
+						<a data-plugin="Modal" data-events="click" href="modal.html">Click for modal</a>
+					</li>
+					<li>
+						<span>All settings are in HTML: </span>
+						<a href="#" data-plugin="Modal" data-events="mouseover click" data-props="onclose : function(data){ return $('#Report').html(data); }, url : 'modal.html',  width : '90%'" data-author="Parag">Mouseover or click for modal</a>
+						<p id="Report">Modal inactive</p>
+					</li>
+				</ol>
+			</nav>
+		</header>
+		<script data-main="js/modal.js" src="js/require.js"></script>
+	</body>
+</html>

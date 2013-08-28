@@ -1,0 +1,109 @@
+/**
+ * @desc Add plugin description here
+ * @usage
+ *   1) If using jQuery
+ *      $('#dom').{{plugin}}(options)
+ *
+ *   2) If not using jQuery
+ *      var domNode = document.getElementById('dom') 
+ *      var {{plugin}} = new {{Plugin}}(domNode, options)
+ *      {{plugin}}.show() // or any method of the plugin
+ *
+ *   3) If using HTML-based binding - simple case
+ *       <a class="btn" data-{{plugin}}="click" href="http://localhost/bento/iframe.html">Click me</a>
+ *
+ *   4) If using HTML-based binding - with plugin attributes for example
+ *       <button data-{{plugin}}="mouseover" data-animate="true" data-href="#my{{Plugin}}" data-dismiss="false">Mouseover Me</button>
+ *       
+ */
+!function(name, module, context){
+	context = context || window
+	if (typeof window['define'] === 'function') define(['libs/cltp_widget_common', 'text!templates/{{plugin}}.tmpl.html'], module)
+  	else context[name] = module(CT)
+}('{{Plugin}}', function(CT, tmpl){
+	'use strict';
+	/**
+	 * @desc Append the modal template markup first
+	 */
+	if(tmpl) $(document.body).append(tmpl);
+	
+	/**
+	 * @desc 
+	 *   This function checks for plugin CSS. If not present, loads automatically from 'stylesheets' folder in your web root.
+	 *   If, however, your folder structure is different, you can specify the full css url, as in CT.getCSS('http://path/to/cltp_{{plugin}}.css').
+	 *   Or you can add the css for the plugin with a <link> tag in the head of the document. This function need not
+	 *   be commented. If the stylesheet is already loaded, it will stop further execution of the function below.
+	 */
+	CT.getCSS('{{Plugin}}');
+	
+	/**
+	 * @desc default settings for the Modal component
+	 */
+	var defaults = {
+		state : 'alert' // default state of {{plugin}} unless specified by user
+		// Add more default options here
+	};
+	
+	/* ------------------------------------- Private methods below --------------------------------------- */
+	/**
+	 * @desc Desc of the private method
+	 * @return Add return
+	 */
+	function myprivate() {
+        
+    }
+    
+    
+	
+	/* ------------------------------------- Private methods section ends --------------------------------------- */
+	
+	
+	
+	/* ------------------------------------- COMPONENT DEFINITION -------------------------------------------- */
+	function {{Plugin}}(el, options){
+		this.el = el;
+		this.settings = options;
+	}
+	
+	{{Plugin}}.prototype = {
+		constructor : {{Plugin}},
+		
+		// Add prototype methods
+		/**
+		 * @desc 'alert' state of the plugin
+		 */
+		alert : function(){ alert('It works!') }
+		
+	}
+	
+	function exec{{Plugin}}(e, data){
+		e && e.preventDefault();
+		data = data || $(this).data('ct_{{pluginDashed}}');
+		new {{Plugin}}(this, data)[data.state]();
+	}
+	/* -------------------------------------------------------------------------------------------------------------- */
+	
+	
+	// Manual binding - when user calls the plugin via javascript
+	$.fn[$.fn.{{plugin}}? 'ct{{plugin}}' : '{{plugin}}'] = function(options){
+		return this.each(function(){
+			var $elem = $(this) //caching
+				,htmlSettings = $elem.data('ct_{{pluginDashed}}')
+				,settings = {};
+				
+			if(!htmlSettings) $elem.data('ct_{{pluginDashed}}', (htmlSettings = CT.getHTMLSettings(this))); // check and store plugin settings from HTML attrs
+			if(typeof options === 'string') settings.state = options; // If user sends a string (instead of hash) defining state of the plugin
+			$.extend(settings, defaults, htmlSettings, typeof options === 'object' && options);
+			exec{{Plugin}}.call(this, undefined, settings);
+		});
+	};
+	
+	// Auto binding
+	$('[data-{{plugin}}]').each(function(){
+		var $elem = $(this)
+			,evt = $elem.attr('data-{{plugin}}') || 'click';
+		$elem.data('ct_{{pluginDashed}}', $.extend({}, defaults, CT.getHTMLSettings(this))).bind(evt, exec{{Plugin}});
+	});
+	
+	return {{Plugin}};
+}, this)
