@@ -11,6 +11,25 @@
 		,stylesPath : '/stylesheets'
 	}
 	
+	function _parse(str){
+		var attrObj = {}
+		$.each(str.split(','), function(keyVal){
+			var pair = keyVal.split(':')
+			attrObj[pair[0].trim()] = pair[1].trim()
+		})
+		return attrObj
+	}
+	
+	function _getAttrs(nodeAttrs){
+		var bindAttrs = {}
+		try { 
+			bindAttrs = new Function('return { ' + nodeAttrs + '}')() 
+		} catch(e){
+			bindAttrs = _parse(nodeAttrs)
+		}
+		return bindAttrs
+	}
+	
 	function exec(e, data){
 		var pluginName = data && data._name || $(this).attr('data-plugin')
 		data = data || $.data(this, 'pr_'+pluginName);
@@ -29,7 +48,7 @@
 				var k = key.split('-'); k.splice(0,1);
 				if(key.indexOf('data-props') > -1)
 					try{
-						$.extend(settings, new Function('return {' + val + '}')())
+						$.extend(settings, _getAttrs(val))
 					} catch(e){ throw new Error('Invalid properties added in "data-props". Error is: "' + e.message + '"') }
 				else settings[k.join('-')] = val;
 			}
