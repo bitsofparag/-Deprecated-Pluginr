@@ -36,7 +36,8 @@ A typical **Pluginr** template will look as follows:
  
     !function(name, module, context){
 	context = context || window
-	if (typeof window['define'] === 'function') define(['pluginr', 'text!templates/jazzydropdown.tmpl.html'], module)
+	if (typeof window['define'] === 'function') 
+          define(['pluginr', 'text!templates/jazzydropdown.tmpl.html'], module)
   	else context[name] = module(Pluginr)
     }('JazzyDropDown', function(App, tmpl){
 	'use strict';
