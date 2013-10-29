@@ -43,16 +43,20 @@ A typical **Pluginr** template will look as follows:
 	
 	/**
 	 * @desc 
-	 *   This function checks for plugin CSS. If not present, loads automatically from 'stylesheets' folder in your web root.
-	 *   If, however, your folder structure is different, you can specify the full css url, as in App.getCSS('http://path/to/jazzydropdown.css').
-	 *   Or you can add the css for the plugin with a <link> tag in the head of the document. This function need not
-	 *   be commented. If the stylesheet is already loaded, it will stop further execution of the function below.
+	 *   This function checks for plugin CSS. If not present, loads automatically from 'stylesheets' 
+         *     folder in your web root.
+	 *   If, however, your folder structure is different, you can specify the full css url, 
+         *     as in App.getCSS('http://path/to/jazzydropdown.css').
+	 *   Or you can add the css for the plugin with a <link> tag in the head of the document. 
+         *     This function need not be commented. If the stylesheet is already loaded, it will stop 
+         *     further execution of the function below.
 	 */
         App.getCSS('Jazz');
 	
 	
 	/**
-	 * @desc default settings for the JazzyDropDown. Will be overridden by HTML data attributes or when specified by direct plugin call
+	 * @desc default settings for the JazzyDropDown. Will be overridden by HTML data attributes 
+         *   or when specified by direct plugin call
 	 */
 	var defaults = {
 		state : 'show' // default state of jazzydropdown
