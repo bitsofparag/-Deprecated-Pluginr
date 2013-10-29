@@ -59,7 +59,7 @@ A typical **Pluginr** template will look as follows:
 		// Add more default options here
 	};
 	
-	/* ------------------------------------- Private methods below --------------------------------------- */
+	/* -------- Private methods below -------- */
 	
 	/**
 	 * @desc Desc of the private method
@@ -70,11 +70,11 @@ A typical **Pluginr** template will look as follows:
      * }
     */
 
-	/* ------------------------------------- Private methods section ends --------------------------------------- */
+	/* -------- Private methods section ends -------- */
 	
 	
 	
-	/* ------------------------------------- COMPONENT DEFINITION -------------------------------------------- */
+	/* -------- COMPONENT DEFINITION -------- */
 	function JazzyDropDown(el, options){
 		this.el = el;
 		this.settings = options;
