@@ -58,8 +58,8 @@ Array.prototype.map||(Array.prototype.map=function(d,f){var g,e,a;if(null==this)
 require.config({
     baseUrl : "javascripts",
     paths: {
-    	'jQuery' : '//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min'
-    	,'jquery' : '//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min'
+    	'jQuery' : '//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min'
+    	,'jquery' : '//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min'
     	,'templates' : '../templates'
     }
 });

@@ -56,10 +56,10 @@ Array.prototype.forEach||(Array.prototype.forEach=function(b,c){var d=this.lengt
 Array.prototype.map||(Array.prototype.map=function(d,f){var g,e,a;if(null==this)throw new TypeError(" this is null or not defined");var b=Object(this),h=b.length>>>0;if("[object Function]"!={}.toString.call(d))throw new TypeError(d+" is not a function");f&&(g=f);e=Array(h);for(a=0;a<h;){var c;a in b&&(c=b[a],c=d.call(g,c,a,b),e[a]=c);a++}return e});
 
 require.config({
-    baseUrl : "js",
+    baseUrl : "javascripts",
     paths: {
-    	'jQuery' : '//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min'
-    	,'jquery' : '//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min'
+    	'jQuery' : '//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min'
+    	,'jquery' : '//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min'
     	,'templates' : '../templates'
     }
 });
