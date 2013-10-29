@@ -1,5 +1,3 @@
-<p><markdown>
-#Markdown Live Editor#
 #Pluginr#
 
 This is a simple framework to quickly build your jQuery plugins without worrying about running it in the browser. That's right, just worry about the core plugin implementation and leave the rest to Pluginr.
@@ -100,4 +98,3 @@ A typical **Pluginr** template will look as follows:
 Just add the implementation of `JazzyDropDown` in the `prototype` methods. The rest (running the plugin in the browser, event binding etc) is taken care of automatically!
 
 [1]: https://github.com/paragmajum/Pluginr/tree/master/build
-</markdown></p>
