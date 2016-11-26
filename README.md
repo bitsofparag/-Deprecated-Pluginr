@@ -1,4 +1,4 @@
-#Pluginr#
+#[Deprecated] Pluginr#
 
 This is a simple framework to quickly build your jQuery plugins without worrying about running it in the browser. That's right, just worry about the core plugin implementation and leave the rest to Pluginr.
 
